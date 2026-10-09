@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#14233d">
+<title>Happy 21st Birthday Inna 🖤</title>
+<style>
+*{box-sizing:border-box}
+:root{
+ --navy:#14233d;
+ --gold:#f3d99b;
+ --cream:#fffaf0;
+}
+html{scroll-behavior:smooth}
+body{
+ margin:0;
+ min-height:100vh;
+ font-family:Arial,sans-serif;
+ text-align:center;
+ color:#f7f1e8;
+ overflow-x:hidden;
+ background:radial-gradient(circle at 15% 10%,#526484,transparent 45%),linear-gradient(140deg,#101c32,#2b4264,#383b65);
+}
+body:before{
+ content:"";
+ position:fixed;
+ inset:0;
+ pointer-events:none;
+ background-image:radial-gradient(#f5dfa2 1px,transparent 1.5px);
+ background-size:45px 45px;
+ opacity:.15;
+}
+.screen{
+ position:relative;
+ z-index:1;
+ display:none;
+ min-height:100vh;
+ min-height:100svh;
+ padding:25px 15px 40px;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ gap:17px;
+}
+.screen.active{
+ display:flex;
+ animation:appear .6s ease;
+}
+@keyframes appear{
+ from{opacity:0;transform:translateY(15px)}
+ to{opacity:1;transform:translateY(0)}
+}
+h1{
+ color:var(--gold);
+ font:700 clamp(30px,7vw,48px)/1.2 Georgia,serif;
+ margin:5px;
+}
+p{
+ line-height:1.7;
+ max-width:550px;
+ margin:5px 0;
+}
+button{
+ font-family:inherit;
+ cursor:pointer;
+ -webkit-tap-highlight-color:transparent;
+}
+.btn{
+ border:0;
+ padding:14px 25px;
+ border-radius:40px;
+ background:linear-gradient(110deg,#fff0bd,#c9a76a);
+ color:#25344f;
+ font-size:16px;
+ font-weight:800;
+ box-shadow:0 7px 25px #07142666;
+ transition:transform .2s;
+}
+.btn:active{transform:scale(.96)}
+.btn:disabled{opacity:.5;cursor:default}
+.tag{
+ color:#e6d39d;
+ letter-spacing:2.5px;
+ font-size:11px;
+ font-weight:bold;
+ text-transform:uppercase;
+}
+.panel{
+ width:min(570px,100%);
+ padding:30px 20px;
+ border:1px solid #f4dba98a;
+ border-radius:30px;
+ background:#ffffff13;
+ box-shadow:0 20px 45px #050e2666;
+}
+[hidden]{display:none!important}
+
+/* WELCOME */
+.envelope{
+ position:relative;
+ width:200px;
+ height:155px;
+ margin:22px auto;
+ animation:bob 2.5s infinite ease-in-out;
+}
+@keyframes bob{
+ 50%{transform:translateY(-9px)}
+}
+.paper{
+ position:absolute;
+ width:140px;
+ height:125px;
+ left:30px;
+ top:0;
+ padding:20px 5px;
+ background:#fffdf7;
+ color:#657399;
+ border-radius:9px;
+ transform:rotate(-7deg);
+ font:italic 25px Georgia,serif;
+ box-shadow:0 4px 14px #0002;
+}
+.paper small{
+ display:block;
+ font:10px Arial;
+ letter-spacing:3px;
+ margin-bottom:12px;
+}
+.envelopeFront{
+ position:absolute;
+ bottom:0;
+ width:200px;
+ height:110px;
+ background:#bacce5;
+ clip-path:polygon(0 0,50% 50%,100% 0,100% 100%,0 100%);
+ border-radius:10px;
+}
+.seal{
+ position:absolute;
+ bottom:29px;
+ left:82px;
+ width:37px;
+ height:37px;
+ display:grid;
+ place-items:center;
+ border-radius:50%;
+ background:#b99b64;
+ color:white;
+ border:2px solid #fff0c7;
+}
+
+/* BALLOONS */
+#balloonScreen{
+ justify-content:flex-start;
+ padding-top:38px;
+}
+#balloons{
+ display:grid;
+ grid-template-columns:repeat(7,minmax(0,1fr));
+ gap:35px 13px;
+ width:min(590px,100%);
+ margin:23px auto;
+ justify-items:center;
+}
+.balloon{
+ position:relative;
+ width:55px;
+ height:76px;
+ padding:0;
+ border:0;
+ border-radius:50% 50% 47% 47%;
+ background:radial-gradient(ellipse at 27% 20%,#ffffffcc,#ffffff33 20%,transparent 45%),linear-gradient(125deg,var(--a),var(--b));
+ box-shadow:inset -7px -8px 11px #1e264955,inset 4px 5px 10px #ffffff66,0 8px 12px #0003;
+ animation:balloonFloat 2s infinite alternate ease-in-out;
+ transform-origin:50% 110%;
+}
+.balloon:before{
+ content:"";
+ position:absolute;
+ left:calc(50% - 5px);
+ top:calc(100% - 2px);
+ border-left:5px solid transparent;
+ border-right:5px solid transparent;
+ border-bottom:10px solid var(--b);
+}
+.balloon:after{
+ content:"";
+ position:absolute;
+ top:calc(100% + 8px);
+ left:50%;
+ width:1px;
+ height:24px;
+ background:#e5e0d9;
+}
+@keyframes balloonFloat{
+ to{transform:translateY(-8px) rotate(5deg)}
+}
+.balloon.pop{
+ animation:pop .28s forwards;
+ pointer-events:none;
+}
+@keyframes pop{
+ to{transform:scale(1.6);opacity:0}
+}
+#counter{
+ background:white;
+ color:#536487;
+ border-radius:30px;
+ padding:10px 24px;
+ font-weight:bold;
+}
+
+/* BIRTHDAY */
+.musicCircle{
+ width:155px;
+ height:155px;
+ display:grid;
+ place-items:center;
+ border-radius:50%;
+ border:3px dashed #d4bb85;
+ font-size:78px;
+ margin:20px auto;
+ box-shadow:0 0 0 13px #e9d7a044;
+ animation:bob 2s infinite;
+}
+
+/* CAKE */
+.cakeStage{
+ width:min(540px,100%);
+ background:#f8f9ff;
+ border-radius:26px;
+ padding:15px 13px 23px;
+ box-shadow:0 18px 35px #0004;
+}
+.cakeStage svg{
+ width:100%;
+ height:auto;
+ display:block;
+}
+.flame{
+ transform-box:fill-box;
+ transform-origin:50% 90%;
+ animation:flicker .5s infinite alternate;
+}
+@keyframes flicker{
+ to{opacity:.75;transform:scale(.85,1.12) rotate(7deg)}
+}
+.blown .flame{opacity:0;animation:none}
+.smoke{opacity:0}
+.blown .smoke{animation:smokeRise 1.3s both}
+@keyframes smokeRise{
+ 0%{opacity:0;transform:translateY(0)}
+ 40%{opacity:.75}
+ 100%{opacity:0;transform:translateY(-28px)}
+}
+#knife{transform-origin:440px 260px}
+.cutting #knife{
+ animation:knifeCut 2s ease-in-out forwards;
+}
+@keyframes knifeCut{
+ 0%{transform:none}
+ 30%{transform:translate(-75px,-70px) rotate(-30deg)}
+ 55%{transform:translate(-110px,-105px) rotate(-45deg)}
+ 75%{transform:translate(-120px,-38px) rotate(-45deg)}
+ 100%{transform:none}
+}
+#cakeSlice{opacity:0}
+.cutting #cakeSlice{
+ opacity:1;
+ animation:sliceMove .9s 1s both;
+}
+@keyframes sliceMove{
+ to{transform:translate(39px,24px)}
+}
+#cakeInfo{
+ color:#62718e;
+ font-size:14px;
+ min-height:24px;
+}
+
+/* BEAR */
+.bearStage{
+ width:min(550px,100%);
+ border-radius:27px;
+ overflow:hidden;
+ background:linear-gradient(#f8fbff,#e3eaf8);
+ box-shadow:0 15px 35px #0003;
+}
+.bearStage svg{
+ display:block;
+ width:100%;
+ height:auto;
+}
+#bearRig{transform:translateX(285px)}
+#bearArt.walk #bearRig{
+ animation:bearWalk 2.2s ease-out forwards;
+}
+@keyframes bearWalk{
+ 0%{transform:translate(285px,-7px)}
+ 45%{transform:translate(135px,0)}
+ 70%{transform:translate(65px,-7px)}
+ 100%{transform:translate(0,0)}
+}
+#frontBear,#sideBear{
+ transition:opacity .45s,transform .45s;
+ transform-origin:105px 250px;
+}
+#sideBear{
+ opacity:0;
+ transform:scaleX(.5);
+}
+#bearArt.side #frontBear{
+ opacity:0;
+ transform:scaleX(.5);
+}
+#bearArt.side #sideBear{
+ opacity:1;
+ transform:scaleX(1);
+}
+#bearArt.sorry #frontBear{
+ opacity:1;
+ transform:scaleX(1);
+}
+#bearArt.sorry #sideBear{
+ opacity:0;
+}
+#sadEyes,#sadMouth{opacity:0}
+#bearArt.sorry #sadEyes,
+#bearArt.sorry #sadMouth{opacity:1}
+#bearArt.sorry #happyEyes,
+#bearArt.sorry #happyMouth{opacity:0}
+#bearArm{transform-origin:60px 212px}
+#bearArt.grab #bearArm{
+ transform:translate(-42px,19px) rotate(13deg);
+ transition:transform .5s;
+}
+#bearArt.eat #bearArm{
+ animation:feed 2.7s forwards;
+}
+@keyframes feed{
+ 0%{transform:translate(-42px,19px) rotate(13deg)}
+ 30%,78%{transform:translate(52px,-72px) rotate(-45deg)}
+ 100%{transform:none}
+}
+#theSlice{transform-origin:234px 292px}
+#bearArt.grab #theSlice{
+ transform:translate(50px,-19px);
+ transition:transform .5s;
+}
+#bearArt.eat #theSlice{
+ animation:takeSlice 2.7s both;
+}
+@keyframes takeSlice{
+ 0%{transform:translate(50px,-19px)}
+ 30%{transform:translate(142px,-106px)}
+ 65%{transform:translate(142px,-106px) scale(.6)}
+ 100%{opacity:0;transform:translate(142px,-106px) scale(.02)}
+}
+#rubPaw{transform-origin:72px 260px}
+#bearArt.rub #rubPaw{
+ animation:bellyRub .75s infinite alternate;
+}
+@keyframes bellyRub{
+ to{transform:translate(14px,10px) rotate(12deg)}
+}
+#bearCaption{
+ min-height:23px;
+ font-size:14px;
+}
+
+/* CHAT */
+.chat{
+ width:min(550px,100%);
+ padding:16px;
+ background:#f7f8ff;
+ color:#34435f;
+ border-radius:22px;
+ text-align:left;
+ box-shadow:0 12px 30px #0003;
+}
+.chatHead{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ padding-bottom:10px;
+ border-bottom:1px solid #dbe2ef;
+ font-weight:bold;
+}
+.avatar{
+ width:40px;
+ height:40px;
+ display:grid;
+ place-items:center;
+ background:#e3e9fa;
+ border-radius:50%;
+ font-size:25px;
+}
+#bearMessage{
+ display:block;
+ background:#e7edf9;
+ border-radius:5px 16px 16px 16px;
+ padding:14px;
+ margin:12px 0 0 45px;
+ line-height:1.7;
+ min-height:45px;
+}
+
+/* GIFT */
+.giftIcon{
+ font-size:120px;
+ animation:bob 2s infinite;
+ filter:drop-shadow(0 10px 12px #0004);
+}
+
+/* LETTER */
+#letterScreen{
+ padding-top:45px;
+ padding-bottom:55px;
+}
+.letter{
+ width:min(650px,100%);
+ padding:30px 26px;
+ border-radius:23px;
+ background:linear-gradient(#fffdf5,#f4f0e7);
+ color:#46536c;
+ text-align:left;
+ box-shadow:0 18px 35px #0004;
+}
+.letter h2{
+ margin:0 0 18px;
+ color:#83769e;
+ font:italic 30px Georgia,serif;
+}
+#letterText{
+ white-space:pre-wrap;
+ overflow-wrap:anywhere;
+ font-size:17px;
+ line-height:2;
+}
+.musicPlayer{
+ width:min(650px,100%);
+ padding:18px;
+ background:#ffffff15;
+ border:1px solid #f5dda244;
+ border-radius:20px;
+}
+.musicPlayer p{font-size:13px}
+#songStatus{color:#f3dfb2}
+
+@media(max-width:550px){
+ #balloons{
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:31px 8px;
+  max-width:410px;
+ }
+ .balloon{
+  width:clamp(43px,11vw,53px);
+  height:clamp(58px,15vw,73px);
+ }
+ .letter{padding:25px 19px}
+ #letterText{font-size:16px;line-height:1.95}
+}
+@media(max-width:340px){
+ #balloons{grid-template-columns:repeat(4,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- 1. WELCOME -->
+<section class="screen active" id="welcome">
+ <div class="panel">
+  <div class="tag">A little surprise just for you</div>
+  <div class="envelope">
+   <div class="paper">
+    <small>FOR YOU</small>
+    Inna ♡
+   </div>
+   <div class="envelopeFront"></div>
+   <div class="seal">♥</div>
+  </div>
+  <h1>Dear Inna,<br>Today is yours ✨</h1>
+  <p>A sky full of stars, 21 little wishes, and a special surprise waiting for you.</p>
+  <button class="btn" onclick="begin()">Open your surprise ♡</button>
+ </div>
+</section>
+
+<!-- 2. BALLOONS -->
+<section class="screen" id="balloonScreen">
+ <div class="tag">Twenty-one little wishes</div>
+ <h1>21 Wishes for Inna 🎈</h1>
+ <p>Pop all 21 balloons to unlock your birthday surprise!</p>
+ <div id="counter">0 / 21</div>
+ <div id="balloons"></div>
+</section>
+
+<!-- 3. BIRTHDAY TUNE -->
+<section class="screen" id="birthdayScreen">
+ <div class="panel">
+  <div class="tag">All 21 wishes are yours</div>
+  <div class="musicCircle">🎶</div>
+  <h1>Happy 21st Birthday,<br>Inna!</h1>
+  <p>Wishing you a beautiful year full of happiness, courage and love.</p>
+  <p id="tuneInfo">Your birthday melody is playing... 🎵</p>
+  <button id="tuneRetry" class="btn" hidden onclick="playTune()">▶ Play Birthday Tune</button>
+  <div style="height:10px"></div>
+  <button class="btn" onclick="goToCake()">Let's see your cake 🎂</button>
+ </div>
+</section>
+
+<!-- 4. CAKE -->
+<section class="screen" id="cakeScreen">
+ <div class="tag">The sweetest moment</div>
+ <h1>Make a Birthday Wish 🎂</h1>
+ <p>First blow out the candles, then cut your birthday cake!</p>
+
+ <div id="cakeStage" class="cakeStage">
+  <svg viewBox="0 0 500 330" role="img" aria-label="Birthday cake with candles and knife">
+   <defs>
+    <linearGradient id="cakeColor" x1="0" x2="1">
+     <stop stop-color="#899bc9"/>
+     <stop offset=".5" stop-color="#d4d2f0"/>
+     <stop offset="1" stop-color="#7489bb"/>
+    </linearGradient>
+    <linearGradient id="blade">
+     <stop stop-color="#a4b4c3"/>
+     <stop offset=".5" stop-color="#ffffff"/>
+     <stop offset="1" stop-color="#899db1"/>
+    </linearGradient>
+   </defs>
+
+   <ellipse cx="243" cy="288" rx="173" ry="23" fill="#d4d9ec"/>
+   <ellipse cx="243" cy="278" rx="166" ry="18" fill="#fff" stroke="#bec8df" stroke-width="4"/>
+
+   <g id="wholeCake">
+    <path d="M110 155H374V253Q243 292 110 253Z" fill="url(#cakeColor)" stroke="#788bb8" stroke-width="3"/>
+    <path d="M111 220Q243 250 373 220" fill="none" stroke="#fff0d9" stroke-width="12"/>
+    <ellipse cx="242" cy="155" rx="132" ry="39" fill="#fff9f0" stroke="#c4bce4" stroke-width="5"/>
+    <path d="M112 164Q143 205 169 174Q200 207 229 174Q260 208 293 174Q335 208 373 164" fill="none" stroke="#fff8ed" stroke-width="13" stroke-linecap="round"/>
+    <g fill="#7585b8">
+     <circle cx="155" cy="150" r="9"/>
+     <circle cx="195" cy="132" r="8"/>
+     <circle cx="289" cy="132" r="9"/>
+     <circle cx="331" cy="151" r="8"/>
+    </g>
+   </g>
+
+   <g id="cakeSlice">
+    <path d="M268 160L374 166V249L303 264L268 193Z" fill="#e9c4ad" stroke="#8b8bb8" stroke-width="2"/>
+    <path d="M268 160L374 166L303 195Z" fill="#fff8ef"/>
+    <path d="M286 215L362 225" stroke="#a49dce" stroke-width="8"/>
+   </g>
+
+   <g id="candles">
+    <rect x="181" y="91" width="11" height="53" rx="3" fill="#88a8d5"/>
+    <rect x="235" y="82" width="11" height="54" rx="3" fill="#b7a1d6"/>
+    <rect x="289" y="91" width="11" height="53" rx="3" fill="#a2c9b1"/>
+    <g class="flame" fill="#ffb531">
+     <path d="M186 89Q173 76 186 65Q199 78 186 89Z"/>
+     <path d="M240 80Q227 66 240 54Q253 68 240 80Z"/>
+     <path d="M294 89Q281 76 294 65Q307 78 294 89Z"/>
+    </g>
+    <g class="smoke" stroke="#a1a1a1" stroke-width="2" fill="none">
+     <path d="M186 85q-9 -10 0 -20t0 -20"/>
+     <path d="M240 76q-9 -10 0 -20t0 -20"/>
+     <path d="M294 85q-9 -10 0 -20t0 -20"/>
+    </g>
+   </g>
+
+   <g id="knife">
+    <path d="M375 260L443 246V262L375 275Z" fill="url(#blade)" stroke="#74879e" stroke-width="2"/>
+    <rect x="438" y="242" width="53" height="25" rx="12" fill="#677ca4"/>
+    <circle cx="479" cy="254" r="3" fill="#f5e6bf"/>
+   </g>
+  </svg>
+
+  <p id="cakeInfo">Close your eyes and make a wish ✨</p>
+  <button class="btn" id="blowBtn" onclick="blowCandles()">🌬️ Blow Out Candles</button>
+  <button class="btn" id="cutBtn" hidden onclick="cutCake()">🔪 Cut a Slice</button>
+ </div>
+</section>
+
+<!-- 5. BEAR -->
+<section class="screen" id="bearScreen">
+ <div class="tag">An unexpected little guest</div>
+ <h1>A Hungry Little Bear 🐻</h1>
+
+ <div class="bearStage">
+  <svg id="bearArt" viewBox="0 0 540 405" role="img" aria-label="Bear eating a slice and rubbing belly">
+   <defs>
+    <radialGradient id="fur" cx="30%" cy="20%">
+     <stop stop-color="#dca77b"/>
+     <stop offset=".7" stop-color="#bc805c"/>
+     <stop offset="1" stop-color="#8b593c"/>
+    </radialGradient>
+    <radialGradient id="bellyColor">
+     <stop stop-color="#fce0bd"/>
+     <stop offset="1" stop-color="#edbd99"/>
+    </radialGradient>
+   </defs>
+
+   <ellipse cx="274" cy="365" rx="225" ry="13" fill="#b4c1d8" opacity=".3"/>
+
+   <rect x="35" y="321" width="224" height="17" rx="8" fill="#bdc8e2"/>
+   <rect x="62" y="336" width="15" height="40" rx="4" fill="#8c9cbe"/>
+   <rect x="218" y="336" width="15" height="40" rx="4" fill="#8c9cbe"/>
+
+   <ellipse cx="142" cy="308" rx="98" ry="12" fill="white" stroke="#cbd4ea" stroke-width="4"/>
+   <path d="M68 262H204V298Q143 316 68 298Z" fill="#9fa9dd"/>
+   <path d="M69 287Q140 310 203 287" fill="none" stroke="#fff4dc" stroke-width="8"/>
+   <ellipse cx="136" cy="263" rx="69" ry="19" fill="#fffaf2"/>
+   <circle cx="109" cy="253" r="7" fill="#7187c3"/>
+   <circle cx="151" cy="252" r="7" fill="#7187c3"/>
+
+   <g id="theSlice">
+    <path d="M211 277L253 286L236 310L210 299Z" fill="#f4d3b2" stroke="#8a86ba" stroke-width="2"/>
+    <path d="M211 277L253 286L234 295L210 286Z" fill="#fffaf4"/>
+    <path d="M216 296L238 301" stroke="#a29bd3" stroke-width="5"/>
+   </g>
+
+   <g transform="translate(267 18)">
+    <g id="bearRig">
+     <g id="frontBear">
+      <ellipse cx="60" cy="325" rx="32" ry="20" fill="#916043"/>
+      <ellipse cx="156" cy="325" rx="32" ry="20" fill="#916043"/>
+      <ellipse cx="110" cy="246" rx="79" ry="96" fill="url(#fur)" stroke="#86573d" stroke-width="3"/>
+      <ellipse cx="110" cy="255" rx="56" ry="67" fill="url(#bellyColor)"/>
+
+      <path d="M165 211Q200 218 192 270Q182 286 163 273Z" fill="#b77755" stroke="#85573a" stroke-width="3"/>
+
+      <g id="bearArm">
+       <path d="M54 208Q18 210 20 263Q24 289 45 278Q63 263 62 235Z" fill="url(#fur)" stroke="#85573a" stroke-width="3"/>
+       <ellipse cx="33" cy="268" rx="18" ry="16" fill="#b87856"/>
+      </g>
+
+      <circle cx="53" cy="75" r="28" fill="#a56d4f"/>
+      <circle cx="164" cy="75" r="28" fill="#a56d4f"/>
+      <circle cx="53" cy="75" r="15" fill="#ecaa8d"/>
+      <circle cx="164" cy="75" r="15" fill="#ecaa8d"/>
+      <ellipse cx="109" cy="130" rx="76" ry="70" fill="url(#fur)" stroke="#885b3d" stroke-width="3"/>
+      <ellipse cx="109" cy="158" rx="43" ry="32" fill="#f2c7a1"/>
+
+      <g id="happyEyes">
+       <ellipse cx="83" cy="125" rx="8" ry="10" fill="#34231e"/>
+       <ellipse cx="137" cy="125" rx="8" ry="10" fill="#34231e"/>
+       <circle cx="85" cy="121" r="2.5" fill="white"/>
+       <circle cx="139" cy="121" r="2.5" fill="white"/>
+      </g>
+
+      <g id="sadEyes">
+       <path d="M71 113Q83 105 95 117M125 117Q137 105 150 113" stroke="#69473b" stroke-width="3" fill="none"/>
+       <ellipse cx="82" cy="131" rx="12" ry="16" fill="#28232d"/>
+       <ellipse cx="138" cy="131" rx="12" ry="16" fill="#28232d"/>
+       <ellipse cx="78" cy="126" rx="5" ry="7" fill="white"/>
+       <ellipse cx="134" cy="126" rx="5" ry="7" fill="white"/>
+       <path d="M70 146Q61 162 73 166Q83 162 70 146ZM146 147Q136 164 148 167Q158 163 146 147Z" fill="#8ad2f2"/>
+      </g>
+
+      <path d="M98 145Q110 135 122 145Q111 154 98 145Z" fill="#57372d"/>
+
+      <g id="happyMouth">
+       <path d="M105 154Q111 176 123 154" stroke="#55342e" stroke-width="3" fill="none"/>
+      </g>
+      <g id="sadMouth">
+       <path d="M99 176Q110 166 123 176" stroke="#55342e" stroke-width="3.5" fill="none"/>
+      </g>
+     </g>
+
+     <g id="sideBear">
+      <ellipse cx="69" cy="325" rx="32" ry="20" fill="#916043"/>
+      <ellipse cx="161" cy="325" rx="31" ry="20" fill="#916043"/>
+      <ellipse cx="116" cy="245" rx="84" ry="96" fill="url(#fur)" stroke="#86573d" stroke-width="3"/>
+      <ellipse cx="97" cy="258" rx="61" ry="70" fill="url(#bellyColor)"/>
+      <circle cx="124" cy="82" r="27" fill="#a56d4f"/>
+      <circle cx="79" cy="74" r="29" fill="#a56d4f"/>
+      <circle cx="79" cy="74" r="15" fill="#ecaa8d"/>
+      <ellipse cx="105" cy="132" rx="73" ry="69" fill="url(#fur)" stroke="#86573d" stroke-width="3"/>
+      <ellipse cx="51" cy="154" rx="40" ry="26" fill="#f2c7a1"/>
+      <ellipse cx="27" cy="149" rx="12" ry="8" fill="#57372d"/>
+      <ellipse cx="77" cy="126" rx="8" ry="10" fill="#34231e"/>
+      <circle cx="79" cy="122" r="2" fill="white"/>
+      <path d="M31 162Q42 176 54 163" stroke="#594135" stroke-width="3" fill="none"/>
+      <path d="M162 207Q189 221 177 269" stroke="#9b6345" stroke-width="29" stroke-linecap="round" fill="none"/>
+
+      <g id="rubPaw">
+       <path d="M79 217Q54 234 67 268" stroke="#ad7552" stroke-width="27" stroke-linecap="round" fill="none"/>
+       <ellipse cx="68" cy="266" rx="18" ry="14" fill="#b47957"/>
+      </g>
+     </g>
+    </g>
+   </g>
+  </svg>
+ </div>
+
+ <p id="bearCaption">Wait... someone's coming! 👀</p>
+
+ <div id="bearChat" class="chat" hidden>
+  <div class="chatHead">
+   <div class="avatar">🐻</div>
+   <div>
+    Little Bear
+    <small style="display:block;color:#8190a6;font-weight:normal">Feeling very sorry...</small>
+   </div>
+  </div>
+  <span id="bearMessage"></span>
+ </div>
+
+ <button id="giftBtn" class="btn" hidden onclick="show('giftScreen')">
+  Where's My Gift? 🎁
+ </button>
+</section>
+
+<!-- 6. GIFT -->
+<section class="screen" id="giftScreen">
+ <div class="panel">
+  <div class="tag">A little gift from the bear</div>
+  <div class="giftIcon">🎁</div>
+  <h1>A Gift for Inna!</h1>
+  <p>There's something special inside... a letter written with love. 💌</p>
+  <button class="btn" onclick="openLetter()">Open Your Letter 💌</button>
+ </div>
+</section>
+
+<!-- 7. LETTER -->
+<section class="screen" id="letterScreen">
+ <div style="font-size:62px">💌</div>
+ <div class="tag">A letter from the heart</div>
+
+ <div class="letter">
+  <h2>প্রিয় ইন্না, 🖤</h2>
+  <div id="letterText"></div>
+ </div>
+
+ <div class="musicPlayer">
+  <p>🎶 আজ জন্মদিন তোমার</p>
+  <p id="songStatus">Your special birthday song is playing...</p>
+  <button class="btn" id="songBtn" onclick="toggleSong()">⏸ Pause Music</button>
+ </div>
+
+ <h1 style="font-size:30px">Happy 21st Birthday, Inna! 🖤</h1>
+ <p>With all my love. ✨</p>
+</section>
+
+<!-- AUDIO -->
+<audio id="letterSong" src="letter-song.mp3" preload="auto"></audio>
+
+<script>
+/* =========================
+   EXACT ORIGINAL LETTER
+   তোমার লেখা অপরিবর্তিত
+========================= */
+
+const LETTER = `২১ বছরে তোমাকে স্বাগতম,হুমায়ুন আহমেদ বলে ২১ একটা রহস্যময় বয়স,এ বয়সে মানুষ অজানা কৌতুহলে অদম্য জিনিস কে জয় করতে চায়, আমার  যখন ২১ হয় তখন আমি খুব এক্সাইটেড ছিলাম,২১ বছর বয়সে একটু নিজের স্বাধীন মত জীবন কাটাব,যা মনে আসে করব যেটায়  নিজের শান্তি আসে,পুরোটা হয়তো করতে পারি নি,কিন্তু ২১ এর সেই প্রানশক্তি আছে যা একজন মানুষকে ঘুরে দাড়াতে শক্তি দেয়। তুমি আমার অনেক প্রিয় একটা জুনিয়র, আমার ছোট বোন,হল এ আমার স্মৃতি খুব ই করুন,সুখের স্মৃতি তেমন নাই, তুমি আসার পরে এতটুকু আমি বলতে পারি যে হলে আমার নিজের একটা বোন ছিলো, জীবনে অনেক বড় হও আমি জানি তুমি হবা,কোনোকিছু তে ভয় পাবা না,আপু তোমার জন্য সবসময় আছি,আপু তোমাকে অনেক বেশি ভালোবাসি🖤
+ওহ জন্মদিনের উইশ করতে চাইসিলাম-_-, রহস্যময় ২১ এ তোমাকে স্বাগতম, তোমাকে জন্মদিনের অনেক শুভেচ্ছা🥰 হ্যাপি বার্থডে🎈`;
+
+document.getElementById('letterText').textContent=LETTER;
+
+/* =========================
+   AUDIO SETTINGS
+   নতুন কাটা MP3 = 52 seconds
+========================= */
+
+const SONG_DURATION = 52;
+const FADE_SECONDS = 2;
+
+const letterAudio=document.getElementById('letterSong');
+const songButton=document.getElementById('songBtn');
+const songStatus=document.getElementById('songStatus');
+
+let songTimer=null;
+let songFinished=false;
+
+/* SCREEN */
+function show(id){
+ document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ window.scrollTo(0,0);
+}
+
+/* BALLOONS */
+let popped=0;
+
+function begin(){
+ show('balloonScreen');
+
+ const box=document.getElementById('balloons');
+ box.innerHTML='';
+ popped=0;
+ document.getElementById('counter').textContent='0 / 21';
+
+ const colors=[
+  ['#ffdf9c','#c7a262'],
+  ['#b6d2f4','#6889ba'],
+  ['#d7c5f5','#9b82bc'],
+  ['#b8e1d4','#70aaa4'],
+  ['#f8d8ba','#be9a8a'],
+  ['#d6e6be','#8ba57e']
+ ];
+
+ for(let i=0;i<21;i++){
+  const balloon=document.createElement('button');
+  balloon.className='balloon';
+
+  const c=colors[i%colors.length];
+  balloon.style.setProperty('--a',c[0]);
+  balloon.style.setProperty('--b',c[1]);
+  balloon.style.animationDelay=-(i*.13)+'s';
+  balloon.setAttribute('aria-label','Pop balloon '+(i+1));
+
+  balloon.onclick=()=>{
+   if(balloon.classList.contains('pop'))return;
+   balloon.classList.add('pop');
+   popped++;
+   document.getElementById('counter').textContent=popped+' / 21';
+
+   if(popped===21){
+    setTimeout(()=>{
+     show('birthdayScreen');
+     playTune();
+    },400);
+   }
+  };
+
+  box.appendChild(balloon);
+ }
+}
+
+/* BIRTHDAY MELODY */
+let tuneContext=null;
+let tunePlaying=false;
+let tuneOscillators=[];
+
+const melody=[
+ [392,.75],[392,.25],[440,1],[392,1],[523,1],[494,1.8],
+ [392,.75],[392,.25],[440,1],[392,1],[587,1],[523,1.8],
+ [392,.75],[392,.25],[784,1],[659,1],[523,1],[494,1],[440,1.8],
+ [698,.75],[698,.25],[659,1],[523,1],[587,1],[523,2]
+];
+
+async function playTune(){
+ if(tunePlaying)return;
+
+ try{
+  const AudioClass=window.AudioContext||window.webkitAudioContext;
+  if(!AudioClass)throw new Error('Audio unsupported');
+
+  tuneContext=new AudioClass();
+  await tuneContext.resume();
+
+  if(tuneContext.state!=='running')throw new Error('Audio blocked');
+
+  tunePlaying=true;
+  document.getElementById('tuneRetry').hidden=true;
+
+  let t=tuneContext.currentTime+.05;
+  tuneOscillators=[];
+
+  for(const [frequency,duration] of melody){
+   const length=duration*.43;
+   const osc=tuneContext.createOscillator();
+   const gain=tuneContext.createGain();
+
+   osc.type='sine';
+   osc.frequency.value=frequency;
+
+   gain.gain.setValueAtTime(.0001,t);
+   gain.gain.linearRampToValueAtTime(.17,t+.02);
+   gain.gain.exponentialRampToValueAtTime(.0001,t+length);
+
+   osc.connect(gain);
+   gain.connect(tuneContext.destination);
+   osc.start(t);
+   osc.stop(t+length+.01);
+   tuneOscillators.push(osc);
+
+   t+=length+.06;
+  }
+
+  setTimeout(()=>{
+   document.getElementById('tuneInfo').textContent='Your cake is waiting! 🎂';
+   tunePlaying=false;
+  },Math.max(0,(t-tuneContext.currentTime)*1000));
+
+ }catch(e){
+  tunePlaying=false;
+  document.getElementById('tuneRetry').hidden=false;
+  document.getElementById('tuneInfo').textContent='Tap to play your birthday tune 🎶';
+ }
+}
+
+function stopTune(){
+ for(const osc of tuneOscillators){
+  try{osc.stop()}catch(e){}
+ }
+ tuneOscillators=[];
+ if(tuneContext){
+  tuneContext.close().catch(()=>{});
+  tuneContext=null;
+ }
+ tunePlaying=false;
+}
+
+function goToCake(){
+ stopTune();
+ show('cakeScreen');
+}
+
+/* CANDLES */
+let candlesBlown=false;
+let cakeCut=false;
+
+function blowCandles(){
+ if(candlesBlown)return;
+ candlesBlown=true;
+
+ document.getElementById('cakeStage').classList.add('blown');
+ document.getElementById('blowBtn').disabled=true;
+ document.getElementById('cakeInfo').textContent='Your wish is made! ✨';
+
+ setTimeout(()=>{
+  document.getElementById('blowBtn').hidden=true;
+  document.getElementById('cutBtn').hidden=false;
+ },1300);
+}
+
+/* CUT CAKE */
+function cutCake(){
+ if(!candlesBlown||cakeCut)return;
+ cakeCut=true;
+
+ document.getElementById('cutBtn').disabled=true;
+ document.getElementById('cakeStage').classList.add('cutting');
+ document.getElementById('cakeInfo').textContent='Cutting one delicious slice... 🍰';
+
+ setTimeout(()=>{
+  show('bearScreen');
+  startBearStory();
+ },2400);
+}
+
+/* BEAR STORY */
+function startBearStory(){
+ const bear=document.getElementById('bearArt');
+ const caption=document.getElementById('bearCaption');
+ const chat=document.getElementById('bearChat');
+ const gift=document.getElementById('giftBtn');
+
+ bear.classList.remove('walk','grab','eat','side','rub','sorry');
+ chat.hidden=true;
+ gift.hidden=true;
+ document.getElementById('bearMessage').textContent='';
+
+ setTimeout(()=>{
+  bear.classList.add('walk');
+  caption.textContent='A hungry little bear is coming! 🐻';
+ },150);
+
+ setTimeout(()=>{
+  bear.classList.add('grab');
+  caption.textContent='He is picking up one slice of cake! 🍰';
+ },2500);
+
+ setTimeout(()=>{
+  bear.classList.remove('grab');
+  bear.classList.add('eat');
+  caption.textContent='Munch munch... he is eating the cake! 😋';
+ },3200);
+
+ setTimeout(()=>{
+  caption.textContent='The rest of your cake is safe! 🎂';
+ },5600);
+
+ setTimeout(()=>{
+  bear.classList.add('side','rub');
+  caption.textContent='He is rubbing his big belly! 😂';
+ },6500);
+
+ setTimeout(()=>{
+  bear.classList.remove('side','rub');
+  bear.classList.add('sorry');
+  caption.textContent='Oops... now he feels sorry. 🥺';
+ },10100);
+
+ setTimeout(()=>{
+  chat.hidden=false;
+
+  const message="I ate your cake! I'm sorry, I was hungry... 🥺💧 But I have a gift for you! 🎁";
+  const characters=Array.from(message);
+  const output=document.getElementById('bearMessage');
+
+  let index=0;
+
+  function typeMessage(){
+   if(index<characters.length){
+    output.textContent+=characters[index++];
+    setTimeout(typeMessage,42);
+   }else{
+    gift.hidden=false;
+   }
+  }
+
+  typeMessage();
+ },11000);
+}
+
+/* LETTER MUSIC - 52 SECONDS */
+function clearSongTimer(){
+ if(songTimer!==null){
+  clearInterval(songTimer);
+  songTimer=null;
+ }
+}
+
+function finishSong(){
+ clearSongTimer();
+ letterAudio.pause();
+ songFinished=true;
+ songButton.textContent='▶ Replay Music';
+ songStatus.textContent='Your birthday song has finished. 🖤';
+}
+
+function monitorSong(){
+ clearSongTimer();
+
+ songTimer=setInterval(()=>{
+  if(letterAudio.paused){
+   clearSongTimer();
+   return;
+  }
+
+  const time=letterAudio.currentTime;
+
+  if(time>=SONG_DURATION){
+   finishSong();
+   return;
+  }
+
+  const fadeStart=SONG_DURATION-FADE_SECONDS;
+
+  if(time>=fadeStart){
+   letterAudio.volume=Math.max(
+    0,
+    .8*((SONG_DURATION-time)/FADE_SECONDS)
+   );
+  }else{
+   letterAudio.volume=.8;
+  }
+ },60);
+}
+
+async function playLetterSong(restart=false){
+ try{
+  clearSongTimer();
+
+  if(restart){
+   letterAudio.currentTime=0;
+  }
+
+  letterAudio.volume=.8;
+  await letterAudio.play();
+
+  songFinished=false;
+  songButton.textContent='⏸ Pause Music';
+  songStatus.textContent='🎶 তোমার জন্য বিশেষ গান বাজছে...';
+
+  monitorSong();
+
+ }catch(error){
+  songButton.textContent='▶ Play Music';
+  songStatus.textContent='গান চালু হয়নি। letter-song.mp3 একই ফোল্ডারে আছে কি না দেখো।';
+ }
+}
+
+function openLetter(){
+ show('letterScreen');
+ playLetterSong(true);
+}
+
+function toggleSong(){
+ if(letterAudio.paused){
+  playLetterSong(songFinished);
+ }else{
+  letterAudio.pause();
+  clearSongTimer();
+  songButton.textContent='▶ Resume Music';
+  songStatus.textContent='Music paused';
+ }
+}
+
+letterAudio.addEventListener('ended',finishSong);
+
+letterAudio.addEventListener('error',()=>{
+ clearSongTimer();
+ songButton.textContent='▶ Play Music';
+ songStatus.textContent='Audio file not found. Keep letter-song.mp3 beside index.html.';
+});
+</script>
+</body>
+</html>
